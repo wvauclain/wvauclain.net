@@ -1,6 +1,6 @@
 <div id="bio">
     {{ $image := (resources.Get "images/will-picture-square.jpg").Resize "384x webp q50" }}
-    <img src="{{ $image.RelPermalink }}" alt="My headshot" id="headshot" />
+    <img src="{{ $image.RelPermalink }}" width="192px" height="192px" style="clip-path: circle(50%)" alt="My headshot" id="headshot" />
     <div id="bio-text">
         <p><b>Will Vauclain</b></p>
         <p>University of Pennsylvania</p>
