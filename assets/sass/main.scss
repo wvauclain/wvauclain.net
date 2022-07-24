@@ -1,4 +1,3 @@
-@import 'fonts';
 @import 'article';
 @import 'bio';
 @import 'home';
@@ -21,9 +20,10 @@
   --verbatim-background-color: var(--off-white);
 
   --system-fonts-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --body-font: "Computer Concrete", var(--system-fonts-sans-serif);
-  --header-font: "Libertinus Sans Bold", var(--system-fonts-sans-serif);
-  --monospace-font: Iosevka, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --system-fonts-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --body-font: var(--system-fonts-sans-serif);
+  --header-font: var(--system-fonts-sans-serif);
+  --monospace-font: var(--system-fonts-mono);
 }
 
 *, *:before, *:after {
@@ -143,6 +143,7 @@ pre, pre > code {
   border: none;
   margin: 0px;
   padding: 0px;
+  font-size: 0.75rem;
 }
 
 .katex { font-size: 1.1em !important; }
