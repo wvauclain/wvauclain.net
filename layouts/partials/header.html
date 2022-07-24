@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+    <head>
+	<title>{{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%221em%22 font-size=%2280%22>🧙🏻‍♂️</text></svg>">
+	{{ $sass := resources.Get "sass/main.scss" }}
+	{{ $options := (dict "includePaths" (slice "sass")) }}
+	{{ $style := ($sass | resources.ToCSS) }}
+	<link rel='stylesheet' type='text/css' href='{{ $style.RelPermalink }}'>
+
+	{{ range .Scratch.Get "stylesheets" }} <link rel='stylesheet' type='text/css' href='/css/{{.}}'> {{ end }}
+	{{ range .Params.stylesheets }} <link rel='stylesheet' type='text/css' href='/css/{{.}}'> {{ end }}
+
+	{{ if .Params.latex }}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+        ]
+    });"></script>
+	{{ end }}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}">
+	<link rel="canonical" href="{{ .Site.BaseURL }}">
+	<link rel='alternate' type='application/rss+xml' title="{{ .Site.Title }} RSS" href='/rss.xml'>
+	<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
+    </head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <div class="separator"></div>
+      <li><a href="/posts">Blog</a></li>
+    </ul>
+  </nav>

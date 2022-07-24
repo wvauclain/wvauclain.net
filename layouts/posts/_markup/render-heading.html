@@ -1,0 +1,5 @@
+{{ if and (gt .Level 1) (eq .Page.Kind "page") }}
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}"><a href="#{{ .Anchor | safeURL }}" ariaLabel="Anchor">{{ .Text | safeHTML }}</a></h{{ .Level }}>
+{{ else }}
+    <h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}</h{{ .Level }}>
+{{ end }}

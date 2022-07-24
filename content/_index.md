@@ -1,0 +1,11 @@
+---
+---
+
+{{< bio >}}
+
+---
+
+# Recent Posts
+
+{{< recentposts >}}
+

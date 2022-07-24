@@ -1,0 +1,12 @@
+baseURL = 'https://wvauclain.net/'
+languageCode = 'en-us'
+title = "Will's ~"
+
+[taxonomies]
+tag = 'tags'
+
+[permalinks]
+tags = '/posts/tags/:title/'
+
+[markup.highlight]
+noClasses=false

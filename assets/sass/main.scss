@@ -1,0 +1,184 @@
+@import 'fonts';
+@import 'article';
+@import 'bio';
+@import 'home';
+@import 'syntax';
+
+:root {
+  /* Brand colors */
+  --jade: rgb(0,153,119);
+  --light-jade: rgb(127,188,170);
+  --light-red:rgb(242,173,178);
+  --off-white: rgb(247,247, 255);
+  --charcoal: rgb(48,56,58);
+
+  /* Element colors */
+  --background-color: var(--off-white);
+  --foreground-color: var(--charcoal);
+  --alt-background-color: var(--jade);
+  --alt-foreground-color: var(--off-white);
+  --verbatim-foreground-color: var(--jade);
+  --verbatim-background-color: var(--off-white);
+
+  --system-fonts-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --body-font: "Computer Concrete", var(--system-fonts-sans-serif);
+  --header-font: "Libertinus Sans Bold", var(--system-fonts-sans-serif);
+  --monospace-font: Iosevka, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+*, *:before, *:after {
+  // https://css-tricks.com/international-box-sizing-awareness-day/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* background-color: var(--background-color); */
+  background: linear-gradient(45deg, var(--light-red), var(--light-jade));
+  color: var(--foreground-color);
+  font-family: var(--body-font);
+  /* font-size: 1rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav#navbar {
+  --vertical-padding: 0.5rem;
+  --horizontal-padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  background-color: var(--alt-background-color);
+  color: var(--alt-foreground-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  font-size: 1.25em;
+  font-family: var(--header-font);
+  font-weight: 700;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+  & > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    width: 100%;
+
+    & > li {
+      display: inline;
+    }
+
+    & > .separator {
+      flex-grow: 1;
+    }
+  }
+}
+
+footer {
+  --vertical-padding: 0;
+  --horizontal-padding: 3rem;
+  width: 100%;
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  background-color: var(--alt-background-color);
+  color: var(--alt-foreground-color);
+  margin-top: auto;
+  border-top: 1px solid black;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  color: inherit;
+}
+
+#content {
+  margin: 0 2rem 2rem 2rem;
+  width: 100%;
+}
+
+.card {
+  /* border: 1px solid black; */
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 22px rgba(0,0,0,0.5);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font);
+  font-weight: 700;
+}
+
+code,
+pre {
+  font-family: var(--monospace-font);
+}
+
+code {
+  /* Iosevka is a bit larger than the body font, so to make the two line up we need to scale it down to 0.9em */
+  font-size: 0.9em;
+
+  color: var(--verbatim-foreground-color);
+  border: 1px solid var(--verbatim-foreground-color);
+  border-radius: 4px;
+  background-color: var(--verbatim-background-color);
+  padding: 1px 2px;
+}
+
+pre, pre > code {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.katex { font-size: 1.1em !important; }
+
+a.footnote-ref::before {
+  content: '[';
+}
+
+a.footnote-ref::after {
+  content: ']';
+}
+
+main.card {
+  --margin: 2rem;
+  --side-padding: 2rem;
+  margin: var(--margin);
+  width: calc(100% - 2 * var(--margin));
+  max-width: 60rem;
+  padding: 0 var(--side-padding);
+  height: calc(100% - 2 * var(--margin));
+  flex-grow: 1;
+
+  @media screen and (max-width: 54rem) and (min-width: 30rem) {
+    --margin: 1rem;
+    --side-padding: 1rem;
+  }
+
+  @media screen and (max-width: 30rem) {
+    --margin: 0.5rem;
+    --side-padding: 0.5rem;
+  }
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: var(--charcoal);
+  opacity: 50%;
+}

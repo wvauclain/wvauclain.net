@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+
+<main class="card">
+    <article>
+        <header>
+        {{- if .Title -}}
+            <h1>{{.Title}}</h1>
+        {{- end -}}
+        {{- if .Params.authors -}}
+        <h2>{{ .Params.authors -}}</h2>
+        {{- end -}}
+        </header>
+
+
+        {{ .Content }}
+    </article>
+</main>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,32 @@
+#bio {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin: auto 0;
+  padding: 1rem 0;
+
+  width: 100%;
+
+  & p {
+    margin: 0.25rem;
+  }
+
+  & a {
+    color: inherit;
+  }
+
+  @media screen and (max-width: 30rem) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+#headshot {
+  width: 12rem;
+  height: auto;
+  clip-path: circle(50%);
+}
+

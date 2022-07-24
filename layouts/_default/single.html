@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<main class="card">
+    <article>
+        {{- if .Title -}}
+        <header>
+            <h1>{{.Title}}</h1>
+        </header>
+        {{- end -}}
+
+        {{ .Content }}
+    </article>
+</main>
+
+{{ partial "footer.html" . }}
