@@ -38,6 +38,7 @@ body {
   min-height: 100vh;
   /* background-color: var(--background-color); */
   background: linear-gradient(45deg, var(--light-red), var(--light-jade));
+  background-attachment: fixed;
   color: var(--foreground-color);
   font-family: var(--body-font);
   /* font-size: 1rem; */
