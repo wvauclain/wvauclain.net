@@ -79,28 +79,28 @@ config file is below:
 
 ```json
 {"devices": [
-  {
-    "disable_built_in_keyboard_if_exists": false,
-      "fn_function_keys": [],
-      "identifiers": {
-        "is_keyboard": true,
-        "is_pointing_device": false,
-        "product_id": 10304,
-        "vendor_id": 11720
-      },
-      "ignore": false,
-      "manipulate_caps_lock_led": true,
-      "simple_modifications": [
-        { "from": { "key_code": "g" }, "to": [ { "key_code": "spacebar" } ] },
-        { "from": { "key_code": "i" },
-          "to": [ { "key_code": "r", "modifiers": [ "left_shift" ] } ]
-        },
-        { "from": { "key_code": "j" },
-          "to": [ { "key_code": "2", "modifiers": [ "left_shift" ] } ]
-        },
-        { "from": { "key_code": "k" }, "to": [ { "key_code": "1" } ] },
-        { "from": { "key_code": "m" }, "to": [ { "key_code": "3" } ] }
-      ]
-  }
+	{
+			"disable_built_in_keyboard_if_exists": false,
+			"fn_function_keys": [],
+			"identifiers": {
+					"is_keyboard": true,
+					"is_pointing_device": false,
+					"product_id": 10304,
+					"vendor_id": 11720
+			},
+			"ignore": false,
+			"manipulate_caps_lock_led": true,
+			"simple_modifications": [
+					{ "from": { "key_code": "g" }, "to": [ { "key_code": "spacebar" } ] },
+					{ "from": { "key_code": "i" },
+							"to": [ { "key_code": "r", "modifiers": [ "left_shift" ] } ]
+					},
+					{ "from": { "key_code": "j" },
+							"to": [ { "key_code": "2", "modifiers": [ "left_shift" ] } ]
+					},
+					{ "from": { "key_code": "k" }, "to": [ { "key_code": "1" } ] },
+					{ "from": { "key_code": "m" }, "to": [ { "key_code": "3" } ] }
+			]
+	}
 ]}
 ```
